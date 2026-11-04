@@ -1,28 +1,31 @@
 import java.util.Scanner;
 
-public class Ex13 {
+public class Ex11 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         final int TAM = 10;
-        int a[], i, cont=0;
+        int a[], i, x, cont=0;
 
         a = new int[TAM];
 
         for(i=0; i<TAM; i++) {
-            System.out.println("Digite um número:");
+            System.out.println("Digite os números:");
             a[i] = in.nextInt();
         }
 
-        for(i=0; i<TAM/2; i++) {
-            if(a[i] == a[TAM-1-i]) {
+        System.out.println("Qual número você quer procurar?");
+        x = in.nextInt();
+
+        for(i=0; i<TAM; i++) {
+            if(x == a[i]) {
                 cont++;
             }
         }
 
-        if(cont == TAM/2) {
-            System.out.println("É um palíndromo!");
-        }else {
-            System.out.println("Não é um palíndromo!");
+        if(cont > 0) {
+            System.out.println("Tem o número " + x);
+        } else {
+            System.out.println("Não tem o respectivo número.");
         }
     }
 }
